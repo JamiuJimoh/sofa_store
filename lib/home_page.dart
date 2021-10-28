@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sofa_store/widgets/item_card.dart';
 
 import 'data.dart';
+import 'details_screen.dart';
 import 'text_style_constants.dart';
 import 'widgets/chips_row.dart';
 import 'widgets/search_bar.dart';
@@ -16,20 +17,6 @@ class HomePage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(15.0),
-            // child: Column(
-            //   crossAxisAlignment: CrossAxisAlignment.start,
-            //   children: [
-            //     Text('Best Furniture', style: heading),
-            //     const SizedBox(height: 8.0),
-            //     Text('Perfect Choice!', style: heading2),
-            //     const SizedBox(height: 30.0),
-            //     const SearchBar(),
-            //     const SizedBox(height: 20.0),
-            //     const ChipsRow(),
-            //     const SizedBox(height: 25.0),
-            //     const ItemCard(),
-            //   ],
-            // ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -49,11 +36,16 @@ class HomePage extends StatelessWidget {
                   itemBuilder: (_, i) => Column(
                     children: [
                       ItemCard(
-                          name: sofas[i].name,
-                          seller: sofas[i].seller,
-                          description: sofas[i].description,
-                          price: sofas[i].price,
-                          imagePath: sofas[i].imagePath),
+                        name: sofas[i].name,
+                        seller: sofas[i].seller,
+                        description: sofas[i].description,
+                        price: sofas[i].price,
+                        imagePath: sofas[i].imagePath,
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (_) => DetailsScreen(sofa: sofas[i])),
+                        ),
+                      ),
                       const SizedBox(height: 25.0),
                     ],
                   ),

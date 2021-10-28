@@ -8,12 +8,9 @@ class LikeButton extends StatelessWidget {
   final double? size;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10.0),
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-        color: Colors.white,
-      ),
+    return CircleAvatar(
+      backgroundColor: Colors.white,
+      radius: size == null ? 16.0 : (size! / 12) * 10,
       child: Icon(
         Icons.favorite,
         color: Colors.red,

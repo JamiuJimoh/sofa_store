@@ -6,7 +6,7 @@ const kOnPrimary = Color(0xFF403B58);
 const kWhite = Color(0xFFFFFFFF);
 
 final heading = GoogleFonts.lato(
-  fontSize: 20.0,
+  fontSize: 22.0,
   color: kOnPrimary,
   fontWeight: FontWeight.w800,
 );
@@ -40,12 +40,10 @@ final descriptionStyle = GoogleFonts.lato(
 );
 
 final chipUnselected = GoogleFonts.lato(
-  // fontSize: 16.0,
   color: kOnPrimary,
   fontWeight: FontWeight.w500,
 );
 final chipSelected = GoogleFonts.lato(
-  // fontSize: 16.0,
   color: kWhite,
   fontWeight: FontWeight.w500,
 );

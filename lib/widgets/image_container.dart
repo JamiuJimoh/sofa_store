@@ -7,8 +7,10 @@ class ImageContainer extends StatelessWidget {
   const ImageContainer({
     Key? key,
     required this.imagePath,
+    required this.likeButton,
   }) : super(key: key);
   final String imagePath;
+  final bool likeButton;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class ImageContainer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Column(
+          if(likeButton)Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: const [
               LikeButton(),
